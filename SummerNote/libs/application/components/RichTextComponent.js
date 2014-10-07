@@ -11,13 +11,13 @@ App.RichTextComponent = Ember.Component.extend({
     }.property(),
 
     didInsertElement: function() {
-        var noteElement=this.get('richTextElement'),
+        var richTextElement=this.get('richTextElement'),
         height = this.get('height'),
         content = this.get('content');
         if(height <=40) {
             height = 200;
         }
-        noteElement.summernote({
+        richTextElement.summernote({
             height: height,
             toolbar: [
                 ['style', ['bold', 'italic', 'underline']],
@@ -28,7 +28,7 @@ App.RichTextComponent = Ember.Component.extend({
                 ['insert', ['link']]
             ]
         });
-        noteElement.code(content);
+        richTextElement.code(content);
     },
     willDestroyElement: function() {
         this.get('richTextElement').destroy();
