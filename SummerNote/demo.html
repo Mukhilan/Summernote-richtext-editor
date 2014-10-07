@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Summer Note</title>
+        <meta charset="UTF-8">
+        <title>Rich Text</title>
         <link href="libs/css/bootstrap.min.css" rel="stylesheet">
         <link href="libs/css/font-awesome.min.css" rel="stylesheet">
         <link href="libs/css/summernote.css" rel="stylesheet">
     </head>
     <body>
-            <script type="text/x-handlebars" data-template-name="application">
-                <div class="container">
-                    <h2>Text Editor 1</h2>
-                    {{rich-input height=250}}
-                </div>
-                <div class="container">
-                    <h2>Text Editor 2</h2>
-                    {{rich-input height=250}}
-                </div>
-            </script>
+        <script type="text/x-handlebars" data-template-name="application">
+            <div class="container">
+                <h2>Text Editor 1</h2>
+                {{rich-text height=250 content=postContent}}
+            </div>
+            <div class="container">
+                <h2>Text Editor 2</h2>
+                {{rich-text height=250 content=postContent}}
+            </div>
+        </script>
 
-            <script type="text/x-handlebars" data-template-name="components/rich-input">
-                {{textarea class="richNote"}}
-            </script>
+        <script type="text/x-handlebars" data-template-name="components/rich-text">
+            {{textarea class="richNote"}}
+        </script>
 
         <script src="libs/js/starter-kit-1.7.0/jquery-1.10.2.js"></script>
         <script src="libs/js/summernote.min.js"></script>
@@ -29,6 +30,7 @@
         <script src="libs/js/starter-kit-1.7.0/ember-1.7.0.js"></script>
         <script src="libs/js/starter-kit-1.7.0/ember-data.js"></script>
         <script src="libs/application/app.js"></script>
-        <script src="libs/application/components/summerNote_component.js"></script>
+        <script src="libs/application/controllers/RichTextController.js"></script>
+        <script src="libs/application/components/RichTextComponent.js"></script>
     </body>
 </html>
