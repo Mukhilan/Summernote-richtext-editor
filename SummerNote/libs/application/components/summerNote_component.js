@@ -4,18 +4,18 @@ App.RichInputComponent = Ember.Component.extend({
 
     height: 200,
 
-    getElement: function() {
+    getNoteElement: function() {
         return this.$(".richNote");
     }.property(),
 
     didInsertElement: function() {
 
-        var element=this.get('getElement');
+        var noteElement=this.get('getNoteElement');
         var height = this.get('height');
         if(height <=40)
           height=200;
 
-        element.summernote({
+        noteElement.summernote({
 
             height: height,
             toolbar: [
@@ -30,7 +30,6 @@ App.RichInputComponent = Ember.Component.extend({
     },
 
     willDestroyElement: function() {
-        this.get('getElement').destroy();
+        this.get('getNoteElement').destroy();
     }
-
 });
