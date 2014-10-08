@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="libs/css/mocha.css" />
+    </head>
+    <body>
+        <div id="mocha"></div>
+        <script src="libs/js/jquery.min.js"></script>
+        <script src="libs/js/summernote.min.js"></script>
+        <script src="libs/js/starter-kit-1.7.0/handlebars-1.1.2.js"></script>
+        <script src="libs/js/starter-kit-1.7.0/ember-1.7.0.js"></script>
+        <script src="libs/js/starter-kit-1.7.0/ember-data.js"></script>
+        <script src="libs/application/app.js"></script>
+        <script src="libs/application/components/RichTextComponent.js"></script>
+        <script src="libs/application/controllers/RichTextController.js"></script>
+        <script src="libs/Tests/test-setup.js"></script>
+        <script src="libs/Tests/mocha.js"></script>
+        <script src="libs/Tests/sinon.js"></script>
+        <script src="libs/Tests/chai.js"></script>
+        <script src="libs/Tests/expect.js"></script>
+        <script>mocha.setup('bdd')</script>
+        <script>expect = chai.expect</script>
+        <script src="libs/Tests/RichTextComponentTests.js"></script>
+        <script>
+            mocha.run();
+        </script>
+    </body>
+</html>
