@@ -27,7 +27,6 @@ App.RichTextComponent = Ember.Component.extend({
                 ['insert', ['link']]
             ]
         });
-        alert(height);
         richTextElement.code(this.get('content'));
     },
     willDestroyElement: function() {
