@@ -12,9 +12,8 @@ App.RichTextComponent = Ember.Component.extend({
 
     didInsertElement: function() {
         var richTextElement=this.get('richTextElement'),
-        height = this.get('height'),
-        content = this.get('content');
-        if(height <=40) {
+        height = this.get('height')
+        if(height <=40 && height>=250) {
             height = 200;
         }
         richTextElement.summernote({
@@ -28,7 +27,8 @@ App.RichTextComponent = Ember.Component.extend({
                 ['insert', ['link']]
             ]
         });
-        richTextElement.code(content);
+        alert(height);
+        richTextElement.code(this.get('content'));
     },
     willDestroyElement: function() {
         this.get('richTextElement').destroy();
