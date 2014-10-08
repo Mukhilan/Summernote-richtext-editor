@@ -12,8 +12,8 @@ App.RichTextComponent = Ember.Component.extend({
 
     didInsertElement: function() {
         var richTextElement=this.get('richTextElement'),
-        height = this.get('height')
-        if(height <=40 && height>=250) {
+        height = this.get('height');
+        if(height <=40 && height>250) {
             height = 200;
         }
         richTextElement.summernote({
