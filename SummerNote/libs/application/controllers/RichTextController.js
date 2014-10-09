@@ -1,4 +1,7 @@
 App.ApplicationController = Ember.Controller.extend({
-    postContent: 'Enter text..',
+
+    postContent: ' Enter Text Here ...',
+
     height :250
+
 });
