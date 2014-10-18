@@ -1,0 +1,61 @@
+<div class="row no-margin">
+	<div class="col-md-10">
+		<div class="row no-margin top-margin-xl bottom-margin-small">
+			<h4 class="pull-left text-info">{{t label.basic.details}}</h4>
+		</div>
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-pad">Event Title:</label>
+
+				<div class=" col-sm-offset-1 col-sm-8 no-pad">
+					{{input type="text" class="form-control" value=name autofocus=true error=nameError}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-pad">{{t label.event.date}}:</label>
+
+				<div class="col-sm-offset-1 col-sm-8 no-pad">
+					<div class="row no-margin">
+						<div class="col-xs-5 no-pad">
+							{{date-time-picker locale=lang value=startDate placeholderTranslation="label.start.date" pickTime=false range=eventDays}}
+						</div>
+						<div class="col-xs-2 top-margin-medium">
+							<div class="text-center">To</div>
+						</div>
+						<div class="col-xs-5 no-pad">
+							{{date-time-picker locale=lang value=endDate minDate=startDate placeholderTranslation="label.end.date" pickTime=false range=eventDays}}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-pad">{{t label.time.zone}}:</label>
+
+				<div class=" col-sm-offset-1 col-sm-8 no-pad">
+					<div class="dropdown clearfix">
+						{{input type="text" class="form-control" placeholder="Select the Time Zone" value="-12:00"}}
+					</div>
+				</div>
+			</div>
+
+			{{map-box venue=venue}}
+
+			<div class="form-group">
+				<label form="txtDescription" class="col-sm-3 control-label no-pad">{{t label.event.description}}:</label>
+
+				<div class=" col-sm-offset-1 col-sm-8 no-pad">
+					{{rich-text richTextHeight=richTextHeight content=description}}
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-pad"></label>
+
+				<div class=" col-sm-offset-1 col-sm-8 no-pad">
+					{{#bs-button type="primary" size=lg disabled=isNotModelDirty clicked="saveEvent"}}{{t label.save}}{{/bs-button}}
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -5,7 +5,7 @@ App.RichTextComponent = Ember.Component.extend({
 
     height: 200,
 
-    content:" Enter Text here",
+    content:"Enter Text here",
 
     richTextElement: function() {
         return this.$(".richNote");
@@ -17,23 +17,35 @@ App.RichTextComponent = Ember.Component.extend({
             if (height <= 40 || height > 250) {
                 height = 200;
             }
-            richTextElement.focus(function() {
                 richTextElement.summernote({
                     height: height,
+                    airMode: false,
                     toolbar: [
                         ['style', ['bold', 'italic', 'underline']],
                         ['fontsize', ['fontsize']],
+                        ['fontname', ['fontname']],
                         ['color', ['color']],
                         ['para', ['ul', 'ol', 'paragraph']],
                         ['height', ['height']],
                         ['insert', ['link']]
                     ],
-                    focus:true
+                    fontNames: [
+                        'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
+                        'Helvetica Neue', 'Impact', 'Lucida Grande',
+                        'Tahoma', 'Times New Roman', 'Verdana'
+                    ],
+                    styleWithSpan: true
                 });
-                richTextElement.code('');
-            })
+                richTextElement.code(this.get('content'));
     },
     willDestroyElement: function() {
         this.get('richTextElement').destroy();
+    },
+
+    keyUp: function() {
+        var richTextElement = this.get('richTextElement');
+        var content=richTextElement.code();
+        this.set('content',content);
+        console.log(this.get('content'));
     }
 });

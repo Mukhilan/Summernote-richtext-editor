@@ -25,7 +25,7 @@ describe('[components] RichTextComponent', function(){
         createController = function(content) {
             controller = Ember.Controller.extend({
                postContent:"Enter your text",
-               height:220
+               height:250
             }).create();
 
             return controller;
@@ -48,7 +48,7 @@ describe('[components] RichTextComponent', function(){
 
     it("height value  should be checked", function() {
         createRichText();
-        expect("height: 220px;").to.equal($(".note-editable").attr("style"));
+        expect("height: 250px;").to.equal($(".note-editable").attr("style"));
     });
 
     it("Text area content  should be checked", function() {

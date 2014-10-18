@@ -4,24 +4,27 @@
         <meta charset="UTF-8">
         <title>Rich Text</title>
         <link href="libs/css/bootstrap.min.css" rel="stylesheet">
-        <link href="libs/css/font-awesome.min.css" rel="stylesheet">
+        <link href="libs/css/font-awesome.css" rel="stylesheet">
         <link href="libs/css/summernote.css" rel="stylesheet">
-        <link href="libs/css/richText.css" rel="stylesheet">
     </head>
     <body>
         <script type="text/x-handlebars" data-template-name="application">
             <div class="container">
                 <h2>Text Editor</h2>
-                {{rich-text height=height content=postContent}}
+                {{rich-text height=height content=postContent}}<br>
+                <input type="button" value="display" class="ipButton"{{action "display"}}/><br><br>
+                <div>
+                    Displaying your content<br>
+                    {{{postContent}}}
+                </div>
             </div>
         </script>
         <script type="text/x-handlebars" data-template-name="components/rich-text">
-            {{textarea class="richNote" value=content }}
+            {{textarea class="richNote" value=content}}
         </script>
         <script src="libs/js/starter-kit-1.7.0/jquery-1.10.2.js"></script>
         <script src="libs/js/bootstrap.min.js"></script>
         <script src="libs/js/summernote.js"></script>
-        <script src="libs/js/summernote.min.js"></script>
         <script src="libs/js/starter-kit-1.7.0/handlebars-1.1.2.js"></script>
         <script src="libs/js/starter-kit-1.7.0/ember-1.7.0.js"></script>
         <script src="libs/js/starter-kit-1.7.0/ember-data.js"></script>
